@@ -1,0 +1,42 @@
+.section {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+}
+
+.tabelas {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    min-width: 300px;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table tbody tr td {
+    display: flex;
+    flex-direction: row;
+}
+
+figure img {
+    padding: 20px;
+}
+
+.tbody tr td {
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 426px) {
+    .section {
+        flex-direction: column;
+    }
+    .card {
+        height: 500px;
+    }
+}
