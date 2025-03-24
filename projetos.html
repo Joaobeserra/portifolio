@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <title>projetos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="styles.css">
@@ -33,7 +33,6 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
       </a>
     </div>
 
@@ -41,15 +40,8 @@
       <div class="navbar-start">
         <a class="navbar-item" href="index.html">Início</a>
         <a class="navbar-item" href="projetos.html">Projetos</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Contato</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://api.whatsapp.com/send?phone=5565996963223" target="_blank">WhatsApp</a>
-            <a class="navbar-item" href="mailto:joaovitorbeserra@hotmail.com">E-mail</a>
-            <a class="navbar-item">GitHub</a>
-            <a class="navbar-item" href="https://www.instagram.com/joao.dataanalytics/" target="_blank">Instagram</a>
-          </div>
-        </div>
+        <a class="navbar-item" href="https://api.whatsapp.com/send?phone=5565996963223" target="_blank">WhatsApp</a>
+        <a class="navbar-item" href="mailto:joaovitorbeserra@hotmail.com">E-mail</a>
       </div>
     </div>
   </nav>
@@ -260,5 +252,25 @@
     </div>
 !-->    
   </section>
+  <script>
+    // JavaScript para ativar o menu hamburger
+    document.addEventListener('DOMContentLoaded', () => {
+      // Obtendo todos os elementos com a classe "navbar-burger"
+      const navbarBurgers = document.querySelectorAll('.navbar-burger');
+
+      // Iterando sobre cada um dos "navbar-burger"
+      navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          // Obtendo o target do navbar-burger
+          const target = el.dataset.target;
+          const navbarMenu = document.getElementById(target);
+
+          // Alternando a classe "is-active" no menu e no burger
+          el.classList.toggle('is-active');
+          navbarMenu.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>   
