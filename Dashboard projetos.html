@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio – Dashboard de Compras</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <style>
+    .hero {
+      background: #f5f7fa;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero .title {
+      margin-bottom: 1rem;
+    }
+
+    .section-content {
+      padding: 3rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons .button {
+      flex: 1 1 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/projetos.html">
+        <span class="icon"><i class="fas fa-arrow-left"></i></span>
+      </a>
+      <span class="navbar-burger" data-target="mainNav">
+        <span></span><span></span><span></span>
+      </span>
+    </div>
+    <div id="mainNav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- itens de menu, se quiser -->
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Conteúdo -->
+  <section class="section-content">
+    <div class="content">
+      <h3 class="is-4">Acompanhamento de projetos</h3>
+    <figure class="image">
+      <img src="image/Capa Dashboard logistico.svg">
+    </figure>
+    <br>
+    <h3 class="is-4">Solução completa de Business Intelligence</h3>
+      <br>
+      <p>Neste projeto foi construída toda estrutura de BI, desde o levantamento de requisitos de negócio, criação de um
+        DW (datawarehouse), integração de dados com o servidor, e desenvolvimento e publicação do relatório final.</p>
+      <p>O mais interessante é que todo esse processo roda automaticamente, de forma invisível para o usuário final,
+        podendo agendar atualizações de dados diariamente ou se necessário em intervalos de hora em hora.</p>
+      <p>No fluxograma abaixo, destacamos as principais partes do desenvolvimento, que conta com três camadas
+        principais:</p>
+      <figure class="image">
+        <img src="image/Esquema dash projetos.png" alt="">
+      </figure>
+      <h3 class="is-4">Principais indicadores:</h3>
+      <br>
+      <ul>
+        <li><strong>Total por Fornecedor:</strong> Apresenta o total de compras por fornecedor.</li>
+        <li><strong>Original x Orçado:</strong> Compara valores originais versus orçados.</li>
+      </ul>
+      <p>No fluxograma abaixo, destacamos as principais partes do desenvolvimento...</p>
+      <p>Confira todos os detalhes técnicos no GitHub.</p>
+    </div>
+    <div class="cta-buttons">
+      <a href="#" class="button is-primary is-medium">Detalhes Técnicos</a>
+      <a href="#" class="button is-link is-medium">Projeto</a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.getElementById(burger.dataset.target);
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+      });
+    });
+  </script>
+</body>
+
+</html>
