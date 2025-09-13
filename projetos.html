@@ -97,8 +97,8 @@
             </div>
           </div>
         </div>
-
       </div>
+
       <div class="columns">
         <div class="column is-half">
           <div class="card">
@@ -143,7 +143,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <br>
@@ -193,24 +192,35 @@
           </div>
         </div>
 
+        <div class="column is-half">
+          <div class="card">
+            <div class="card-content">
+              <div class="box" style="background-color: #f0f8ff; padding: 0;">
+                <figure class="image is-16by9">
+                  <img src="image/04. Relatório SAC.png" alt="Dashboard Juridico">
+                </figure>
+              </div>
+              <div class="media">
+                <div class="media-content has-text-centered">
+                  <p class="title is-4">Dashboard SAC</p>
+                  <a class="tag is-dark is-medium" href="https://app.powerbi.com/view?r=eyJrIjoiZGFmZTI0ZWEtY2FiZC00MWEwLTg1OTgtNjhhNDJkY2I0N2UxIiwidCI6IjU5Mjc0ODMyLTQ1MjItNGIxYS1hMzMxLTcyNDI1Nzk2YzUxMiJ9" target="_blank">Visualize o Projeto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
+    </div>
   </section>
   <script>
     // JavaScript para ativar o menu hamburger
     document.addEventListener('DOMContentLoaded', () => {
-      // Obtendo todos os elementos com a classe "navbar-burger"
       const navbarBurgers = document.querySelectorAll('.navbar-burger');
-
-      // Iterando sobre cada um dos "navbar-burger"
       navbarBurgers.forEach(el => {
         el.addEventListener('click', () => {
-          // Obtendo o target do navbar-burger
           const target = el.dataset.target;
           const navbarMenu = document.getElementById(target);
-
-          // Alternando a classe "is-active" no menu e no burger
           el.classList.toggle('is-active');
           navbarMenu.classList.toggle('is-active');
         });
