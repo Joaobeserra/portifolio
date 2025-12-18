@@ -1,0 +1,104 @@
+/* Estilos customizados para o projeto */
+
+:root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --primary: 214 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 85% 65%;
+    --secondary: 210 30% 92%;
+    --secondary-foreground: 215 25% 15%;
+    --muted: 210 25% 95%;
+    --muted-foreground: 215 15% 50%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 25% 88%;
+    --input: 214 25% 90%;
+    --ring: 214 85% 45%;
+    --radius: 0.75rem;
+}
+
+* {
+    border-color: hsl(var(--border));
+}
+
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+/* Utilitários de sombra */
+.shadow-card {
+    box-shadow: 0 2px 8px -2px hsl(214 25% 15% / 0.08);
+}
+
+.shadow-elevated {
+    box-shadow: 0 8px 24px -4px hsl(214 25% 15% / 0.12);
+}
+
+/* Animações suaves */
+.transition-shadow {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.transition-opacity {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.transition-colors {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Backdrop blur */
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+
+/* Gradientes */
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+/* Text gradient */
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.text-transparent {
+    color: transparent;
+}
+
+/* Opacidade customizada */
+.opacity-90:hover {
+    opacity: 0.9;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+}
+
+

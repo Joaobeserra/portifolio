@@ -8,6 +8,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'hsl(210 20% 98%)',
+            foreground: 'hsl(215 25% 15%)',
+            card: 'hsl(0 0% 100%)',
+            'card-foreground': 'hsl(215 25% 15%)',
+            primary: 'hsl(214 85% 45%)',
+            'primary-foreground': 'hsl(0 0% 100%)',
+            'primary-glow': 'hsl(214 85% 65%)',
+            secondary: 'hsl(210 30% 92%)',
+            'secondary-foreground': 'hsl(215 25% 15%)',
+            muted: 'hsl(210 25% 95%)',
+            'muted-foreground': 'hsl(215 15% 50%)',
+            accent: 'hsl(199 89% 48%)',
+            'accent-foreground': 'hsl(0 0% 100%)',
+            destructive: 'hsl(0 84.2% 60.2%)',
+            'destructive-foreground': 'hsl(0 0% 100%)',
+            border: 'hsl(214 25% 88%)',
+            input: 'hsl(214 25% 90%)',
+            ring: 'hsl(214 85% 45%)',
+          },
+          borderRadius: {
+            lg: '0.75rem',
+            md: 'calc(0.75rem - 2px)',
+            sm: 'calc(0.75rem - 4px)',
+          },
+        }
+      }
+    }
+  </script>
   <style>
     .spacer {
       margin-bottom: 20px;
@@ -22,263 +56,276 @@
         display: block !important;
       }
     }
+
+    /* Small polish for container */
+    .container {
+      max-width: 1100px;
+    }
+
+    aside.card {
+      position: sticky;
+      top: 24px;
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="index.html">Início</a>
-        <a class="navbar-item" href="projetos.html">Projetos</a>
-        <a class="navbar-item" href="https://api.whatsapp.com/send?phone=5565996963223" target="_blank">WhatsApp</a>
-        <a class="navbar-item" href="mailto:contato.joaovitorbeserra@gmail.com">E-mail</a>
+  <header class="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-10 shadow-sm">
+    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+      <nav class="flex items-center gap-6">
+        <a href="index.html" class="text-sm text-muted-foreground">Inicio</a>
+        <a href="projetos.html" class="text-sm text-muted-foreground">Projetos</a>
+        <a href="https://wa.me/5565996963223" target="_blank" class="text-sm text-muted-foreground">Whatsapp</a>
+        <a href="mailto:joaovitorbeserra@hotmail.com" target="_blank" class="text-sm text-muted-foreground">E-mail</a>
+        <a href="https://www.linkedin.com/in/joaobeserra/" target="_blank"
+          class="text-sm text-muted-foreground">LinkedIn</a>
+      </nav>
+      <div class="flex items-center gap-3">
       </div>
     </div>
-  </nav>
+  </header>
+
   <section class="section">
     <div class="container">
-      <div class="card mb-4">
-        <header class="card-header">
-          <p class="card-header-title">Sobre mim</p>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p>Sou profissional de dados com mais de 4 anos de experiência relevante, focado na geração de insights para
-              as empresas em que trabalhei, por meio de ferramentas de análise avançada, como SQL, Python e Power BI,
-              para otimizar processos e identificar oportunidades de crescimento.</p>
-            <p>Em todas as empresas em que trabalhei, sempre me destaquei pela proatividade em identificar e implementar
-              soluções inovadoras para desafios analíticos, buscando constantemente formas de otimizar processos e
-              melhorar a tomada de decisão.</p>
-            <p>No meu atual emprego desenvolvi visualizações de dados com Power BI e Streamlit(Python), além de usar
-              técnicas de web scraping para monitoramento de e-commerces. Implementei automações para envio de
-              relatórios diários/semanais/mensais.</p>
-            <p>Atualmente, meu objetivo é me desenvolver ainda mais na área de dados, buscando por novos conhecimentos e
-              desenvolvendo novas habilidades que me capacitem a enfrentar desafios cada vez mais complexos. Quero
-              expandir e melhorar meus métodos de análises, como Machine Learning e Big Data, além de aprimorar minha
-              capacidade de transformar dados brutos em insights estratégicos que ajudem as empresas a tomar decisões
-              mais informadas e a alcançar seus objetivos com maior eficácia.</p>
+      <div class="columns">
+        <div class="column">
+          <div class="card mb-4">
+            <header class="card-header">
+              <p class="card-header-title">Sobre mim</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p>Sou Analista de BI com experiência na construção de soluções analíticas que transformam dados
+                  dispersos em informação clara, confiável e útil para o negócio. Minha trajetória foi construída de
+                  forma progressiva, partindo de contextos operacionais até chegar a ambientes mais estratégicos, sempre
+                  com um objetivo claro: usar dados para gerar entendimento, eficiência e melhores decisões.</p>
+                <p>Ao longo da minha carreira, atuei diretamente na estruturação de relatórios, dashboards e indicadores
+                  que antes não existiam ou eram altamente manuais. Trabalhei com dados de diferentes naturezas —
+                  operacionais, comerciais, financeiros e de marketing — integrando múltiplas fontes, organizando
+                  informações e criando visualizações que facilitam a leitura e o uso dos dados no dia a dia das
+                  equipes.</p>
+                <p>Tenho experiência end-to-end em Business Intelligence, passando por extração, tratamento, modelagem e
+                  visualização de dados, com forte atuação em Power BI, SQL e integração de dados via APIs e sistemas
+                  corporativos. Meu foco sempre foi garantir qualidade, padronização e consistência, entendendo que boas
+                  decisões só são possíveis quando os dados são confiáveis.</p>
+                <p>Mais do que construir dashboards, atuo próximo ao negócio. Participo de reuniões, levanto requisitos,
+                  questiono métricas e traduzo necessidades reais em soluções analíticas práticas. Acredito que o papel
+                  do Analista de BI é ser um elo entre dados e pessoas, tornando informações complexas acessíveis e
+                  acionáveis.</p>
+                  <p>Hoje, sigo em constante evolução técnica e analítica, buscando aprofundar conhecimentos em dados, visualização, automação e boas práticas de BI. Meu objetivo é continuar atuando em ambientes onde dados sejam parte central da estratégia, contribuindo para organizações mais eficientes, orientadas por informação e preparadas para crescer de forma sustentável.</p>
+              </div>
+
+            </div>
           </div>
 
-        </div>
-      </div>
-      <div class="card mb-4">
-        <header class="card-header">
-          <p class="card-header-title">Experiências</p>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <!-- Assistente de dados - Grupo BM2 -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Assistente de dados - Grupo BM2 <span class="tag is-dark">03/2024</span>
-                  <span class="tag is-dark">Atual</span>
-                </p>
-                <p>Fui responsável pelo desenvolvimento de soluções completas de Business Intelligence, construindo
-                  dashboards estratégicos com Power BI, sempre com ênfase em proporcionar clareza e suporte efetivo à
-                  tomada de decisões. Liderei a migração para o ambiente TOTVS, incluindo Protheus e RM, promovendo a
-                  integração de dados entre múltiplos sistemas relevantes como Salesforce (CRM), Clinicweb (gestão
-                  clínica) e Next IP (telefonia e call center), garantindo interoperabilidade e integridade das
-                  informações. Atuei na concepção e execução de pipelines robustos em SQL, utilizando MySQL, SQL Server
-                  e Oracle, assegurando a consistência dos dados e uma visão consolidada e confiável para a empresa.
-                  Atendi diretamente áreas estratégicas como Vendas Internas, Projetos, Compras, Financeiro e Logística,
-                  entregando análises que permitiram identificar gargalos operacionais e otimizar processos internos.
-                  Minha atuação contribuiu para o avanço da maturidade analítica da organização, resultando em
-                  relatórios inéditos que se tornaram referência para decisões táticas e estratégicas em diversas áreas.
+          <div class="card mb-4">
+            <header class="card-header">
+              <p class="card-header-title">Experiências</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <!-- Conteúdo de experiências (mantido) -->
+                <!-- Analista de dados -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">Análista de dados - Grupo Vivart <span class="tag is-dark">09/2025</span>
+                      <span class="tag is-dark">Atual</span>
+                    </p>
+                    <p>Minha atuação no Grupo Vivart representa um momento de maturidade na minha jornada como Analista
+                      de BI, onde dados passaram a ser tratados como parte central da estratégia do negócio. Entrei com
+                      o desafio de organizar, integrar e transformar dados de marketing e vendas em informações claras,
+                      confiáveis e acionáveis.</p>
+                    <p>Passei a trabalhar diretamente com dados de tráfego pago e orgânico, integrando informações do
+                      Meta Ads e Google Ads via APIs, consolidando indicadores que antes estavam dispersos em diferentes
+                      plataformas. Meu foco foi estruturar pipelines de dados que garantissem atualização contínua,
+                      padronização e confiabilidade, permitindo análises consistentes ao longo do tempo.</p>
+                    <p>Desenvolvi dashboards interativos voltados à leitura executiva e operacional, sempre
+                      priorizando clareza visual e usabilidade. Estruturei relatórios individuais e comparativos para
+                      acompanhamento de performance de SDRs, especialistas comerciais e gestores de tráfego, o que
+                      permitiu identificar gargalos, oportunidades e evolução dos resultados.</p>
+                    <p>Atuei de ponta a ponta no ciclo de dados, desde a extração e limpeza até a manutenção e automação
+                      dos relatórios. Esse trabalho eliminou controles manuais, reduziu dados desconexos e gerou ganhos
+                      reais de eficiência, inclusive com redução de custos ao centralizar análises no Power BI. Minha
+                      atuação passou a apoiar diretamente decisões estratégicas relacionadas à performance comercial e à
+                      evolução de projetos da empresa.</p>
+                  </div>
+                </div>
+                <hr>
+                <!-- Assistente de dados - Grupo BM2 -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">Assistente de dados - Grupo BM2 <span class="tag is-dark">03/2024</span>
+                      <span class="tag is-dark">09/2025</span>
+                    <p>No Grupo BM2 vivi uma experiência decisiva na construção de um ambiente de Business Intelligence
+                      praticamente do zero. Entrei em um cenário onde os dados existiam, mas não estavam organizados nem
+                      acessíveis para tomada de decisão. Meu papel foi estruturar esse ambiente e dar visibilidade aos
+                      números do negócio.</p>
+                    <p>Atuei diretamente na transição tecnológica da empresa, apoiando a migração de múltiplos sistemas
+                      para o ambiente TOTVS (Protheus e RM). Trabalhei com diferentes bancos de dados, como SQL Server,
+                      MySQL e Oracle, criando consultas e integrando informações ao Power BI.</p>
+                    <p>Desenvolvi dashboards para áreas como vendas internas, compras, projetos e financeiro, inclusive
+                      painéis exibidos em TVs corporativas para acompanhamento em tempo real. Esses relatórios passaram
+                      a orientar decisões que antes eram tomadas de forma intuitiva ou manual.</p>
+                    <p>Minha atuação envolveu todo o processo de ETL, desde a extração até a padronização, validação e
+                      manutenção dos dados. Trabalhei próximo às áreas de negócio, levantando necessidades, ajustando
+                      indicadores e garantindo que cada entrega tivesse utilidade prática. Esse trabalho elevou
+                      significativamente a maturidade analítica da organização e consolidou o BI como ferramenta
+                      essencial no dia a dia dos gestores.</p>
+                  </div>
+                </div>
+                <hr>
+                <!-- Demais experiências mantidas (resumidas para legibilidade) -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">Auxiliar Administrativo - Nutripharme <span class="tag is-dark">03/2024</span>
+                      <span class="tag is-dark">03/2025</span>
+                    </p>Na Nutripharme, comecei a aprofundar minha atuação em dados aplicados ao negócio, com foco
+                    especial em vendas e inteligência comercial. Identifiquei a necessidade de transformar relatórios
+                    estáticos em análises visuais e dinâmicas que facilitassem decisões rápidas.<p>
+                    </p>
+                    <p>Desenvolvi dashboards no Power BI para acompanhamento de vendas, estruturando indicadores que
+                      ajudaram o time comercial a entender melhor o funil, identificar falhas e ajustar estratégias.
+                      Automatizei relatórios que antes eram manuais, reduzindo tempo operacional e aumentando a
+                      confiabilidade das análises.</p>
+                    <p>Além disso, utilizei Python para criar scripts de web scraping, coletando dados de preços da
+                      concorrência em e-commerces e apoiando análises de posicionamento e precificação. Trabalhei com
+                      dados de diferentes fontes, como SQL e Excel, realizando validações cruzadas para garantir
+                      consistência.</p>
+                    <p>Essa experiência fortaleceu minha capacidade de unir dados internos e externos, sempre com foco
+                      em gerar insights práticos e aumentar a autonomia das áreas de negócio.</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">Auxiliar Administrativo - SuperFrio <span class="tag is-dark">06/2023</span>
+                      <span class="tag is-dark">12/2023</span>
+                    </p>
+                    <p>Na SuperFrio tive um contato intenso com dados operacionais em um ambiente logístico de alto
+                      volume. Atuava no controle diário de entrada e saída de veículos, organizando informações em
+                      planilhas e sistemas internos para garantir rastreabilidade e eficiência operacional.</p>
+                    <p>Produzia relatórios manuais de demanda, agendamento e disponibilidade de pátio, apoiando líderes
+                      na organização dos fluxos logísticos. Mesmo em um contexto mais operacional, comecei a utilizar
+                      dados para identificar gargalos e apoiar decisões do dia a dia.</p>
+                    <p>Essa experiência foi fundamental para desenvolver uma visão prática de processos, KPIs
+                      operacionais e importância da qualidade dos dados desde a origem, base essencial para minha
+                      evolução posterior em BI.</p>
+                  </div>
+                </div>
 
-                </p>
-              </div>
-            </div>
-            <hr>
-            <!-- Auxiliar Administrativo - Nutripharme -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Auxiliar Administrativo - Nutripharme <span class="tag is-dark">03/2024</span>
-                  <span class="tag is-dark">03/2025</span>
-                </p>
-                <p>Visualização de Dados: Desenvolvimento e gerenciamento de painéis de visualização de dados que
-                  permitiram à equipe comercial acompanhar o desempenho das vendas de forma dinâmica. Esses painéis
-                  contribuíram para decisões mais rápidas e precisas, melhorando a eficiência das operações comerciais.
-                </p>
-                <p>Relatórios de Performance de Vendas: Elaboração de relatórios mensais sobre a performance de vendas,
-                  utilizando Python e bibliotecas de visualização gráfica para fornecer uma visualização detalhada dos
-                  indicadores. Esses relatórios auxiliaram a alta gestão na tomada de decisões estratégicas, orientando
-                  o direcionamento das operações e iniciativas comerciais.</p>
-                <p>Sistema de Monitoramento: Idealização e desenvolvimento de um sistema de monitoramento de produtos da
-                  própria empresa nos principais sites de marketplace, utilizando Python e Scrapy. A automação da coleta
-                  de dados permitiu uma análise eficiente e em tempo real da precificação, ajudando a equipe comercial a
-                  ajustar suas estratégias de preços e promoções de forma mais eficaz.</p>
-                <p>Apresentações de Resultados: Criação de apresentações de resultados para a equipe comercial,
-                  facilitando a comunicação clara e eficaz das informações relevantes aos clientes. Essas apresentações
-                  destacaram métricas-chave e insights estratégicos, fortalecendo o relacionamento com os clientes e
-                  apoiando a tomada de decisões.</p>
-                <p>Relatório de Controle de Gastos: Criação de um relatório de controle de gastos do time comercial,
-                  proporcionando uma análise detalhada do faturamento versus os investimentos. Esse relatório permitiu
-                  uma melhor compreensão da eficiência das despesas, auxiliando na otimização de recursos e na tomada de
-                  decisões financeiras mais informadas.</p>
-              </div>
-            </div>
-            <hr>
-            <!-- Assistente Administrativo - SuperFrio -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Auxiliar Administrativo - SuperFrio <span class="tag is-dark">06/2023</span> <span
-                    class="tag is-dark">12/2023</span></p>
-                <p>Desenvolvimento de Dashboard em Power BI: Criação de um dashboard em Power BI que fornece uma visão
-                  abrangente dos principais indicadores da operação, permitindo a análise da saúde do estoque e a
-                  identificação dos materiais mais armazenados, contribuindo para a tomada de decisões estratégicas.</p>
-                <p>Apoio a Equipe de Armazém: Colaboração com a equipe de armazém na implementação de procedimentos que
-                  aumentaram a eficiência operacional em 15%.</p>
-                <p>Análise Comparativa de Estoques: Realização de comparativos dos estoques nos sistemas SAP, SISDEV e
-                  JDA, visando identificar e corrigir inconsistências e erros, contribuindo para a precisão da gestão de
-                  inventário.</p>
-                <p>Elaboração de Relatórios de Inbound e Outbound: Responsável pela elaboração de relatórios detalhados
-                  de inbound e outbound, monitorando o fluxo de materiais e contribuindo para a eficiência das operações
-                  logísticas.</p>
-              </div>
-            </div>
-            <hr>
-            <!-- Analista de Cadastro - Broker Mato Grosso -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Analista de Cadastro - Broker Mato Grosso <span class="tag is-dark">04/2022</span>
-                  <span class="tag is-dark">03/2024</span>
-                </p>
-                <p>Gestão de Cadastros: Responsável pela criação, atualização e manutenção de cadastros de clientes,
-                  assegurando a precisão das informações e o envio de todos os novos cadastros ao time da Nestlé SP na
-                  plataforma própria.</p>
-                <p>Suporte Administrativo: Prestação de suporte administrativo à equipe de vendas, organizando
-                  documentação e facilitando o fluxo de informações entre departamentos.</p>
-                <p>Análise de Vendas: Realização de análises detalhadas dos indicadores de vendas, monitorando o
-                  desempenho em relação aos objetivos estabelecidos e propondo ações corretivas para maximizar
-                  resultados.</p>
-                <p>Envio de Relatórios: Geração e envio de relatórios diários, semanais e mensais para a equipe
-                  comercial, apresentando resultados de vendas, novos cadastros e análise de desempenho, facilitando a
-                  tomada de decisões estratégicas.</p>
-                <p>Suporte à Plataforma Nestlé Até Você: Prestação de suporte à plataforma Nestlé Até Você, auxiliando
-                  usuários em dúvidas e problemas relacionados ao sistema, garantindo uma experiência positiva.</p>
-                <p>Elaboração de Rotas: Desenvolvimento de rotas para a equipe comercial, otimizando o deslocamento e a
-                  visitação a clientes, aumentando a eficiência das visitas e o cumprimento das metas.</p>
-                <p>Envio de Atas de Reuniões: Elaboração e envio de atas de reuniões de vendas realizadas em MT para a
-                  Nestlé SP, documentando decisões, ações e responsabilidades acordadas durante os encontros.</p>
-                <p>Aplicação de Descontos: Implementação da aplicação de descontos em pedidos de vendas no sistema da
-                  Nestlé, assegurando que os procedimentos e políticas de precificação sejam seguidos corretamente.</p>
-              </div>
-            </div>
-            <hr>
-            <!-- Auxiliar Administrativo - Broker Mato Grosso -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Auxiliar Administrativo - Broker Mato Grosso <span
-                    class="tag is-dark">09/2021</span> <span class="tag is-dark">03/2022</span></p>
-                <p>Relatórios de Desempenho: Criação de relatórios semanais sobre indicadores de desempenho logístico,
-                  fornecendo insights para a tomada de decisões estratégicas.</p>
-                <p>Treinamento de Novos Funcionários: Desenvolvimento e implementação de programas de integração para
-                  novos colaboradores, facilitando a adaptação à cultura e processos da empresa.</p>
-                <p>Análise de Custos Logísticos: Realização de análises detalhadas sobre custos de transporte e
-                  armazenamento, identificando oportunidades de economia.</p>
-                <p>Participação em Auditorias: Colaboração em auditorias internas e externas, preparando documentação e
-                  relatórios necessários.</p>
-                <p>Acompanhamento de Performance dos Motoristas: Monitoramento e análise do desempenho dos motoristas,
-                  assegurando a conformidade com os padrões de segurança e eficiência.</p>
-                <p>Conferência de Notas: Realização de conferências de notas fiscais e documentos de transporte,
-                  assegurando a conformidade com as entregas realizadas.</p>
-                <p>Acerto de Caixa com os Motoristas: Responsável pelo acerto de caixa diário com motoristas, garantindo
-                  a precisão e transparência nas transações financeiras.</p>
+                <hr>
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">Analista de Cadastro - Broker Mato Grosso <span
+                        class="tag is-dark">04/2022</span>
+                      <span class="tag is-dark">03/2024</span>
+                    </p>
+                    <p>Na Broker Mato Grosso dei um passo importante ao começar a transformar dados operacionais em
+                      informações estratégicas. Atuei com cadastro e manutenção de clientes no ERP SAP, garantindo
+                      integridade e padronização dos dados.</p>
+                    <p>A partir disso, passei a desenvolver relatórios e dashboards no Power BI para áreas como vendas,
+                      logística e estoque, substituindo controles manuais em Excel. Trabalhei com SQL, Excel e SAP para
+                      extrair, tratar e visualizar dados, automatizando atualizações e reduzindo erros.</p>
+                    <p>Esse período consolidou minha transição de atividades administrativas para uma atuação cada vez
+                      mais analítica, com foco em visualização de dados e apoio à tomada de decisão.</p>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="spacer"></div>
+          <div class="spacer"></div>
 
-      <!--Formação-->
-      <div class="card mb-4">
-        <header class="card-header">
-          <p class="card-header-title">Formação</p>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <!-- Análise de Dados Impressionadora -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Análise de dados Impressionadora <span class="tag is-dark">Hashtag
-                    Treinamentos</span> <span class="tag is-dark">110 Horas</span></p>
-                <p>Concluí um curso de analise de dados, que abrangeu as principais ferramentas de análise de dados,
-                  como Excel,
-                  Power BI, SQL e Python. Desenvolvi habilidades em tratamento e visualização de dados, criando
-                  relatórios interativos e dashboards no Power BI, além de aprofundar meu conhecimento em consultas SQL
-                  e manipulação de bases de dados. No Excel, aprimorei o uso de funções avançadas para análise
-                  estatística e modelagem de dados. O curso também incluiu o uso de Python para automação de tarefas e
-                  análise de dados, proporcionando uma abordagem prática e completa para a resolução de problemas
-                  analíticos e a geração de insights estratégicos.</p>
+          <div class="card mb-4">
+            <header class="card-header">
+              <p class="card-header-title">Formação</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+
+                <!-- 1 -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">
+                      Análise De Dados Impressionadora
+                      <span class="tag is-dark">Hashtag Treinamentos</span>
+                      <span class="tag is-dark">205 Horas</span>
+                    </p>
+                  </div>
+                </div>
+                <hr>
+
+                <!-- 2 -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">
+                      Power BI Impressionador
+                      <span class="tag is-dark">Hashtag Treinamentos</span>
+                      <span class="tag is-dark">118 Horas</span>
+                    </p>
+                  </div>
+                </div>
+                <hr>
+
+                <!-- 3 -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">
+                      Excel Impressionador
+                      <span class="tag is-dark">Hashtag Treinamentos</span>
+                      <span class="tag is-dark">110 Horas</span>
+                    </p>
+                  </div>
+                </div>
+                <hr>
+
+                <!-- 4 -->
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">
+                      Matemática para Análise de Dados
+                      <span class="tag is-dark">Asimov Academy</span>
+                      <span class="tag is-dark">6 Horas</span>
+                    </p>
+
+                  </div>
+                </div>
+                <hr>
+
+                <div class="columns is-mobile">
+                  <div class="column">
+                    <p class="title is-5">
+                      SQL Impressionador
+                      <span class="tag is-dark">Hashtag Treinamentos</span>
+                      <span class="tag is-dark">90 Horas</span>
+                    </p>
+                  </div>
+                </div>
+                <hr>
+
+
               </div>
             </div>
-            <hr>
-            <!-- Power BI Impressionador -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Power BI Impressionador <span class="tag is-dark">Hashtag Treinamentos</span>
-                  <span class="tag is-dark">118 Horas</span>
-                </p>
-                <p>Concluí um curso completo de Power BI, onde adquiri habilidades avançadas em importação e tratamento
-                  de dados, criação de dashboards interativos, visualizações eficientes e storytelling com dados.
-                  Aprimorei meu conhecimento em DAX, modelagem de dados, integração com SQL e Power BI Online.</p>
-                <p>O curso incluiu mentorias e lives práticas, proporcionando uma formação robusta para criar soluções
-                  de BI impactantes e eficientes.</p>
-              </div>
-            </div>
-            <hr>
-            <!-- Python Impressionador -->
-            <div class="columns is-mobile">
-              <div class="column">
-                <p class="title is-5">Python Impressionador <span class="tag is-dark">Hashtag Treinamentos</span>
-                  <span class="tag is-dark">119 Horas</span>
-                </p>
-                <p>Concluí o curso Python Impressionador, onde aprendi desde fundamentos de programação, como variáveis,
-                  condições, loops e funções, até tópicos avançados como orientação a objetos, automação de processos
-                  com RPA, Web Scraping, e integração com SQL e APIs. Também trabalhei com análise de dados utilizando
-                  Pandas, criação de dashboards com Dash e Power BI, e desenvolvimento de aplicações web e móveis com
-                  Flask e Django. O curso incluiu a construção de projetos práticos, como automações, sites, jogos e
-                  aplicativos, me proporcionando uma formação completa para aplicar Python em diversas áreas.</p>
-              </div>
-            </div>
-            <hr>
-
-
-
           </div>
-        </div>
-      </div>
 
-      <div class="spacer"></div>
+        </div>
+
+        <!-- Sidebar removido conforme solicitado -->
+      </div>
+    </div>
   </section>
 
   <script>
     // JavaScript para ativar o menu hamburger
     document.addEventListener('DOMContentLoaded', () => {
-      // Obtendo todos os elementos com a classe "navbar-burger"
       const navbarBurgers = document.querySelectorAll('.navbar-burger');
-
-      // Iterando sobre cada um dos "navbar-burger"
       navbarBurgers.forEach(el => {
         el.addEventListener('click', () => {
-          // Obtendo o target do navbar-burger
           const target = el.dataset.target;
           const navbarMenu = document.getElementById(target);
-
-          // Alternando a classe "is-active" no menu e no burger
           el.classList.toggle('is-active');
-          navbarMenu.classList.toggle('is-active');
+          if (navbarMenu) navbarMenu.classList.toggle('is-active');
         });
       });
     });
