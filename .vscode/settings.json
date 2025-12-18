@@ -1,6 +1,3 @@
 {
-    "powerquery.client.additionalSymbolsDirectories": [
-        "c:/Users/User/Documents/GitHub/portifolio/.vscode/excel-pq-symbols"
-    ],
     "liveServer.settings.port": 5501
 }
