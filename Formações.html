@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BI Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(210 20% 98%)',
+                        foreground: 'hsl(215 25% 15%)',
+                        card: 'hsl(0 0% 100%)',
+                        'card-foreground': 'hsl(215 25% 15%)',
+                        primary: 'hsl(214 85% 45%)',
+                        'primary-foreground': 'hsl(0 0% 100%)',
+                        'primary-glow': 'hsl(214 85% 65%)',
+                        secondary: 'hsl(210 30% 92%)',
+                        'secondary-foreground': 'hsl(215 25% 15%)',
+                        muted: 'hsl(210 25% 95%)',
+                        'muted-foreground': 'hsl(215 15% 50%)',
+                        accent: 'hsl(199 89% 48%)',
+                        'accent-foreground': 'hsl(0 0% 100%)',
+                        destructive: 'hsl(0 84.2% 60.2%)',
+                        'destructive-foreground': 'hsl(0 0% 100%)',
+                        border: 'hsl(214 25% 88%)',
+                        input: 'hsl(214 25% 90%)',
+                        ring: 'hsl(214 85% 45%)',
+                    },
+                    borderRadius: {
+                        lg: '0.75rem',
+                        md: 'calc(0.75rem - 2px)',
+                        sm: 'calc(0.75rem - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
+    <!-- Header -->
+    <header class="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-10 shadow-sm">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <nav class="flex items-center gap-6">
+                <a href="projetos.html" class="text-sm text-muted-foreground">Projetos</a>
+                <a href="Formações.html" class="text-sm text-muted-foreground">Formações</a>
+                <a href="https://wa.me/5565996963223" target="_blank" class="text-sm text-muted-foreground">Whatsapp</a>
+                <a href="mailto:joaovitorbeserra@hotmail.com" target="_blank" class="text-sm text-muted-foreground">E-mail</a>
+                <a href="https://www.linkedin.com/in/joaobeserra/" target="_blank" class="text-sm text-muted-foreground">LinkedIn</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <div id="dropdown" class="hidden absolute right-4 top-16 mt-2 w-56 bg-card rounded-md shadow-lg border border-border z-20">
+                    <div class="p-2">
+                        <div class="px-3 py-2 text-sm font-semibold text-foreground">Configurações</div>
+                        <hr class="my-2 border-border">
+                        <a href="#" onclick="openSheet('people')" class="flex items-center px-3 py-2 text-sm text-foreground hover:bg-secondary rounded-md">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            Pessoas Cadastradas
+                        </a>
+                        <a href="#" onclick="openSheet('companies')" class="flex items-center px-3 py-2 text-sm text-foreground hover:bg-secondary rounded-md">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            Empresas Cadastradas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-8">
+        <!-- Dashboards Section -->
+        <div class="space-y-4">
+            <div>
+                <h2 class="text-2xl font-bold text-foreground">Painéis de BI</h2>
+                <p class="text-muted-foreground">Explore alguns projetos que já desenvolvi</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- 1 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Power BI Impressionador</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    118 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="Certificado/certificado (3).pdf" download="Power_BI_Impressionador.pdf" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95L5.05 15.95l4.95-4.95L5.05 5.05z"></path>
+                            </svg>
+                            Baixar PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Excel Impressionador</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    110 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTFiNGE3NTUtZjdkZS00OTY0LTg3OGEtMDRkZTdlMGVkN2U2IiwidCI6IjU5Mjc0ODMyLTQ1MjItNGIxYS1hMzMxLTcyNDI1Nzk2YzUxMiJ9" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Análise de Dados Impressionadora</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    128 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://appfifa-d9kckzwztxuxpaan7ppbyd.streamlit.app/" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">SQL Impressionador</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    90 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://sales-app-happdetpbpvdncoymkuv5u4.streamlit.app/" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Comunicação Eficaz</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    2 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNDVkZjQwYjUtYzVlYy00YWI0LTgwMjItNzgxNzcyY2FkMjg2IiwidCI6IjU5Mjc0ODMyLTQ1MjItNGIxYS1hMzMxLTcyNDI1Nzk2YzUxMiJ9" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Inteligência Emocional</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    2 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiZWM1ODQ0N2MtZWZiOC00ODA3LWEyZWYtZTYxMWQwODgyZjY2IiwidCI6IjU5Mjc0ODMyLTQ1MjItNGIxYS1hMzMxLTcyNDI1Nzk2YzUxMiJ9" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Git e GitHub</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    5 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiZTEzZWEyM2MtM2I0Yy00ZmY2LTk5ZDMtMWFlMDlhYzk5YjExIiwidCI6IjU5Mjc0ODMyLTQ1MjItNGIxYS1hMzMxLTcyNDI1Nzk2YzUxMiJ9" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Agentes de IA com Python</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Hashtag Treinamentos
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    9 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTUyMmIzODctMGI2Mi00NzI2LWE4ZjEtMDgxZTQ0YzQ5ODIyIiwidCI6IjU5Mjc0ODMyLTQ1MjItNGIxYS1hMzMxLTcyNDI1Nzk2YzUxMiJ9" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9 - Novo -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Introdução à Lógica de Programação</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Asimov Academy
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    3 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10 - Novo -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Python para iniciantes: do zero ao primeiro projeto</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Asimov Academy
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    3 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11 - Novo -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Matemática para Análise de Dados</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Asimov Academy
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    6 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12 - Novo -->
+                <div class="bg-card shadow-card border border-border/50 rounded-lg hover:shadow-elevated transition-all hover:border-primary/30">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="space-y-1 flex-1">
+                                <h3 class="text-lg font-semibold text-foreground">Aprendendo Python: Conceitos Intermediários</h3>
+                                <p class="text-sm text-muted-foreground flex items-center gap-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                    Asimov Academy
+                                </p>
+                                <p class="text-sm text-muted-foreground flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    6 Horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-4">
+                        <a href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-secondary transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Baixar pdf
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function openSheet(type) {
+            document.getElementById(type + 'Sheet').classList.remove('hidden');
+            document.getElementById('dropdown').classList.add('hidden');
+        }
+
+        function closeSheet(type) {
+            document.getElementById(type + 'Sheet').classList.add('hidden');
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown');
+            const button = event.target.closest('button[onclick="toggleDropdown()"]');
+            if (!button && dropdown && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
